@@ -43,9 +43,9 @@ morseAlphabet ={
     }
  
 def dit():
-    led.off()
+    led.off() 		#Odd wiring or something, but led.off() is actually LAZ0R.ON !
     sleep(t_dit)
-    led.on()
+    led.on()		#As above - led.on() is actually laz0r.off
     sleep(t_down)
  
 def daah():
