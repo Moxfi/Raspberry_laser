@@ -61,8 +61,7 @@ def space():
 def breaks():
     led.on()
     sleep(t_break)
- 
-#def
+
  
 print (	"LED values: dit: ",t_dit, ", daah: ",t_daah, ", down: ",t_down, ", space: ",t_space)
  
