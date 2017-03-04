@@ -18,7 +18,7 @@ i = 0
  
 								#Inversed aakkoset purkamiseen
 inverseMorseAlphabet ={
-	'': ' ', 		'.----.': "'",
+	'': ' ', 	'.----.': "'",
 	'-....-': '-', 	'.-.-.-': '.',  
 	'-..-.': '/', 	'---...': ':',  
 	'-.-.-.': ';',	'..--..': '?',  
@@ -28,13 +28,13 @@ inverseMorseAlphabet ={
 	'....-': '4', 	'.....': '5',  
 	'-....': '6', 	'--...': '7',  
 	'---..': '8', 	'----.': '9',  
-	'.-': 'A', 		'-...': 'B',  
+	'.-': 'A', 	'-...': 'B',  
 	'-.-.': 'C', 	'-..': 'D',  
-	'.': 'E', 		'..-.': 'F',  
+	'.': 'E', 	'..-.': 'F',  
 	'--.': 'G', 	'....': 'H',  
-	'..': 'I', 		'.---': 'J',  
+	'..': 'I', 	'.---': 'J',  
 	'-.-': 'K', 	'.-..': 'L',  
-	'--': 'M', 		'-.': 'N',  
+	'--': 'M', 	'-.': 'N',  
 	'---': 'O', 	'.--.': 'P',  
 	'--.-': 'Q', 	'.-.': 'R',  
 	'...': 'S', 	'-': 'T',  
@@ -49,21 +49,21 @@ try:
  
     while (True):
        
-        sleep(0.1) 												#Hidastetaan lukutahtia
+        sleep(0.1) 								#Hidastetaan lukutahtia
  
-        while (ldr.value) < 0.4:								#Lasketaan kauanko valo on päällä
-            sleep(0.01)											#Hidastetaan lukutahtia taas...
+        while (ldr.value) < 0.4:						#Lasketaan kauanko valo on päällä
+            sleep(0.01)								#Hidastetaan lukutahtia taas...
             upcount = upcount + 1
             if upcount > 1500:
                 break
  
         if ((upcount > 15) & (upcount < 55)):					#Luetaan Dit/Daah
-            morse_recv += "."									#ja sijoitetaan piste tai viiva morse_recv:iin
+            morse_recv += "."							#ja sijoitetaan piste tai viiva morse_recv:iin
         if ((upcount > 70) & (upcount < 100)):
             morse_recv += "-"
        
-        while (ldr.value) > 0.6:								#Lasketaan kauanko valo on pois päältä
-            sleep(0.01)											#Hidastetaan lukutahtia taas...
+        while (ldr.value) > 0.6:						#Lasketaan kauanko valo on pois päältä
+            sleep(0.01)								#Hidastetaan lukutahtia taas...
             downcount = downcount + 1
             if downcount > 1500:
                 break
@@ -73,33 +73,33 @@ try:
         if ((downcount >= 550) & (downcount < 1500)):
             morse_recv += "\n"
 			
-																#Kun morse_recv ei saa enää arvoja pieneen hetkeen...
+										#Kun morse_recv ei saa enää arvoja pieneen hetkeen...
         if ((downcount >= 1500)):
 			if (len(morse_recv) > 0):
-				while (i < len(morse_recv)): 					#Kelataan morse_recv läpi merkki kerrallaan
+				while (i < len(morse_recv)): 			#Kelataan morse_recv läpi merkki kerrallaan
   
-					if (morse_recv[i] != " "):  				#Käydään läpi dit ja daah:t, jotka muodostavat
-						letter += morse_recv[i]   				#kokonaisen kirjaimen, joka siirretään letter-muuttujaan
+					if (morse_recv[i] != " "):  		#Käydään läpi dit ja daah:t, jotka muodostavat
+						letter += morse_recv[i]   			#kokonaisen kirjaimen, joka siirretään letter-muuttujaan
   
 					elif (morse_recv[i] == " "):  				#Jos merkki katkeaa välilyöntiin
-						message += inverseMorseAlphabet[letter] #napataan letter:iä vastaava arvo inverseMorseAlphabet:sta
-						letter = "" 							#tyhjennetään letter seuraavaa merkkiä varten
+						message += inverseMorseAlphabet[letter] 	#napataan letter:iä vastaava arvo inverseMorseAlphabet:sta
+						letter = "" 					#tyhjennetään letter seuraavaa merkkiä varten
   
-					else: 										#Jos viesti loppuu kesken, siirretään viimeiset arvot muuttujiin
+					else: 							#Jos viesti loppuu kesken, siirretään viimeiset arvot muuttujiin
 						letter += morse_recv[i]
 						message += inverseMorseAlphabet[letter]
 					
-					i += 1  									#siirrytään seuraavaan merkkiin morse_recv:ssä
+					i += 1  						#siirrytään seuraavaan merkkiin morse_recv:ssä
 
-				message += inverseMorseAlphabet[letter] 		#jostain syystä while-loop ei tallenna VIIMEISTÄ merkkiä, joten
-																#se tehdään loopin ulkopuolella
+				message += inverseMorseAlphabet[letter] 			#jostain syystä while-loop ei tallenna VIIMEISTÄ merkkiä, joten
+												#se tehdään loopin ulkopuolella
 
-				print(message)									#tulostetaan dekoodattu viesti
+				print(message)							#tulostetaan dekoodattu viesti
 			
 			else:
 				print("RECV: null")
 			
-		upcount     = 0										#Asetetaan arvot nolliin seuraavaa viestiä varten
+		upcount     = 0									#Asetetaan arvot nolliin seuraavaa viestiä varten
 		downcount   = 20
 		morse_recv = ""
 		letter = ""
