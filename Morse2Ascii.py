@@ -9,7 +9,7 @@ i = 0
 
 #käännetty versio morseaakkosista, numeroista sekä välimerkeistä
 inverseMorseAlphabet ={
-	'': ' ', 		'.----.': "'",
+	'': ' ', 	'.----.': "'",
 	'-....-': '-', 	'.-.-.-': '.',  
 	'-..-.': '/', 	'---...': ':',  
 	'-.-.-.': ';',	'..--..': '?',  
@@ -19,13 +19,13 @@ inverseMorseAlphabet ={
 	'....-': '4', 	'.....': '5',  
 	'-....': '6', 	'--...': '7',  
 	'---..': '8', 	'----.': '9',  
-	'.-': 'A', 		'-...': 'B',  
+	'.-': 'A', 	'-...': 'B',  
 	'-.-.': 'C', 	'-..': 'D',  
-	'.': 'E', 		'..-.': 'F',  
+	'.': 'E', 	'..-.': 'F',  
 	'--.': 'G', 	'....': 'H',  
-	'..': 'I', 		'.---': 'J',  
+	'..': 'I', 	'.---': 'J',  
 	'-.-': 'K', 	'.-..': 'L',  
-	'--': 'M', 		'-.': 'N',  
+	'--': 'M', 	'-.': 'N',  
 	'---': 'O', 	'.--.': 'P',  
 	'--.-': 'Q', 	'.-.': 'R',  
 	'...': 'S', 	'-': 'T',  
@@ -42,17 +42,17 @@ while (i < len(morse_recv)): 				#Kelataan morse_recv läpi merkki kerrallaan
     letter += morse_recv[i]   				#kokonaisen kirjaimen, joka siirretään letter-muuttujaan
   
   elif (morse_recv[i] == " "):  			#Jos merkki katkeaa välilyöntiin
-    message += inverseMorseAlphabet[letter] #napataan letter:iä vastaava arvo inverseMorseAlphabet:sta
-    letter = "" 							#tyhjennetään letter seuraavaa merkkiä varten
+    message += inverseMorseAlphabet[letter] 		#napataan letter:iä vastaava arvo inverseMorseAlphabet:sta
+    letter = "" 					#tyhjennetään letter seuraavaa merkkiä varten
   
-  else: 									#Jos viesti loppuu kesken, siirretään viimeiset arvot muuttujiin
+  else: 						#Jos viesti loppuu kesken, siirretään viimeiset arvot muuttujiin
     letter += morse_recv[i]
     message += inverseMorseAlphabet[letter]
   
   
-  i += 1  									#siirrytään seuraavaan merkkiin morse_recv:ssä
+  i += 1  						#siirrytään seuraavaan merkkiin morse_recv:ssä
 
-message += inverseMorseAlphabet[letter] 	#jostain syystä while-loop ei tallenna VIIMEISTÄ merkkiä, joten
-											#se tehdään loopin ulkopuolella
+message += inverseMorseAlphabet[letter] 		#jostain syystä while-loop ei tallenna VIIMEISTÄ merkkiä, joten
+							#se tehdään loopin ulkopuolella
 
-print(message)								#tulostetaan dekoodattu viesti
+print(message)						#tulostetaan dekoodattu viesti
