@@ -1,6 +1,6 @@
 #CAESAR'S MESSENGER
 #
-#Riku "Mox" Ketonen
+#Mox
 #Raspberry Pi, Laser transmission
 #Morse protocol with Initiate / End signals
 #Comments in english because Github, and it looks better :)
