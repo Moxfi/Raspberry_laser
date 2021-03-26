@@ -1,8 +1,8 @@
 #Morse RECV n DECODE
 #by Mox
 
-#ennalta asetettu muuttuja "VIRELABSIIN KESAKSI TOIHIN?"
-morse_recv = "...- .. .-. . .-.. .- -... ... .. .. -.  -.- . ... .- -.- ... ..  - --- .. .... .. -.  ..--.."
+#ennalta asetettu muuttuja "vire"
+morse_recv = "...- .. .-. . "
 letter = ""
 message = ""
 i = 0
