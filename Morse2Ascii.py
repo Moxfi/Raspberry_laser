@@ -1,5 +1,5 @@
 #Morse RECV n DECODE
-#by Riku "Mox" Ketonen
+#by Mox
 
 #ennalta asetettu muuttuja "VIRELABSIIN KESAKSI TOIHIN?"
 morse_recv = "...- .. .-. . .-.. .- -... ... .. .. -.  -.- . ... .- -.- ... ..  - --- .. .... .. -.  ..--.."
