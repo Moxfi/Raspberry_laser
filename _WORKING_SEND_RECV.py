@@ -1,4 +1,4 @@
-#Riku "Mox" Ketonen
+#Mox
 #Raspberry Pi, Laser transmission
 #Morse protocol with Initiate / End signals
 
