@@ -1,6 +1,6 @@
 keyset = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ0123456789 _?;:/.-'"
 n = 10
-plaintext = "virelabs - töihin ;0 ?".upper()
+plaintext = "textgoeshere".upper()
 j = 0
 encoded = ""
 decoded = ""
