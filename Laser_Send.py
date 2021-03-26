@@ -1,5 +1,5 @@
 #Laser_Send
-#by Riku "Mox" Ketonen
+#by Mox
 from gpiozero import *
 from time import sleep
  
