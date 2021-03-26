@@ -1,5 +1,5 @@
 #Raspberry Pi: Laser recv into Morse into message
-#by Riku "Mox" Ketonen
+#by Mox
 
 #Näytti kauniimmalta Notepad++:ssa
 
